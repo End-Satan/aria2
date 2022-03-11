@@ -509,7 +509,7 @@ View_Aria2() {
     if [[ -z "${IPV4}" || -z "${aria2_port}" ]]; then
         AriaNg_URL="null"
     else
-        AriaNg_API="/#!/settings/rpc/set/wss/${IPV4}/${aria2_port}/jsonrpc/$(echo -n ${aria2_passwd} | base64)"
+        AriaNg_API="/#!/settings/rpc/set/https/${IPV4}/${aria2_port}/jsonrpc/$(echo -n ${aria2_passwd} | base64)"
         AriaNg_URL="http://ariang.js.org${AriaNg_API}"
     fi
     clear
