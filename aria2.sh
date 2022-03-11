@@ -179,7 +179,7 @@ Service_aria2() {
         chkconfig --add aria2
         chkconfig aria2 on
     else
-        wget -N -t2 -T3 "https://raw.githubusercontent.com/P3TERX/aria2.sh/master/service/aria2_debian" -O /etc/init.d/aria2 ||
+        wget -N -t2 -T3 "https://raw.githubusercontent.com/End-Satan/aria2/master/service/aria2_debian" -O /etc/init.d/aria2 ||
             wget -N -t2 -T3 "https://cdn.jsdelivr.net/gh/P3TERX/aria2.sh@master/service/aria2_debian" -O /etc/init.d/aria2 ||
             wget -N -t2 -T3 "https://gh-raw.p3terx.com/P3TERX/aria2.sh/master/service/aria2_debian" -O /etc/init.d/aria2
         [[ ! -s /etc/init.d/aria2 ]] && {
@@ -509,7 +509,7 @@ View_Aria2() {
     if [[ -z "${IPV4}" || -z "${aria2_port}" ]]; then
         AriaNg_URL="null"
     else
-        AriaNg_API="/#!/settings/rpc/set/ws/${IPV4}/${aria2_port}/jsonrpc/$(echo -n ${aria2_passwd} | base64)"
+        AriaNg_API="/#!/settings/rpc/set/wss/${IPV4}/${aria2_port}/jsonrpc/$(echo -n ${aria2_passwd} | base64)"
         AriaNg_URL="http://ariang.js.org${AriaNg_API}"
     fi
     clear
